@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #36261b;
+    text-align: center;
+    background-color: #36261b;
+}
+::before, ::after {
+    content:'';
+    position: absolute; 
+}
+*::selection {
+    color: #000;
+    background-color:#9e6f4e; 
+}
+#card {
+    top: 50%;
+    left: -50%;
+    width: 90vw;
+    height: 90vh;
+    position: fixed;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #bf997e;
+    animation: pop 1s forwards;
+    box-shadow: #261a12 10px 10px;
+    transform: translate(-50%, -50%);
+}
+hr {
+    width: 0%;
+    overflow: hidden;
+    border-radius: 50px;
+    background-color: #725038;
+    border: 0.9px solid #725038;
+    animation: line 2.5s forwards;
+}
+/* Font styles */
+h3 {
+    width: 0;
+    overflow: hidden;
+    animation: align 2s forwards;
+}
+h1 {
+    font-size: 40px;
+    font-family: 'Princess Sofia', cursive;
+}
+p {
+    font-size: 15px;
+    font-weight: bold;
+}
+h3, p {
+    font-family: 'Josefin Sans', sans-serif;
+}
+#head {
+    font-style: italic;
+}
+
+/* Decorations */
+.half-1 {
+    right: 15%;
+    bottom: 57%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    border: 8px solid #fff;
+    background-color: #6f4e37;
+    animation: sdow1 1.8s linear infinite alternate;
+    box-shadow: inset #ddd -1px 1px, inset #4c3525 -10px 10px 0 0, inset #674833 -30px 30px 0 0;
+}
+.half-1::before {
+    top: -30%;
+    right: 15%;
+    width: 13px;
+    height: 30px;
+    background-color: #fff;
+    transform: rotate(20deg);
+    border-radius: 50px 50px 0 0;
+}
+.half-2 {
+    left: 90%;
+    bottom: 55%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: relative;
+    border: 8px solid #fff;
+    background-color: #5c412d;
+    animation: sdow2 1.6s linear infinite alternate;
+    box-shadow: inset #e9cba7 1px 1px, inset #412e20 10px 10px 0 0, inset #674833 15px 15px 0 0;
+}
+.half-2::before {
+    top: 79%;
+    right: 100%;
+    width: 13px;
+    height: 30px;
+    background-color: #fff;
+    transform: rotate(40deg);
+    border-radius: 0 0 50px 50px;
+} 
+/* Full cup */
+.cup{
+    width: 95px;
+    height: 85px;
+    margin: auto;
+    background-color: #fff;
+    transform: translateY(-235%);
+    border-radius: 10px 10px 50% 50%;
+    box-shadow: inset #ddd 15px -10px 0;
+}
+.cup::after {
+    top: 15%;
+    left: 90%;
+    width: 20px;
+    height: 30px;
+    border: 10px solid #fff;
+    border-radius: 0 50% 50% 0;   
+    box-shadow: inset #ddd -5px -5px 0;
+}
+.coffee {
+    width: 80px;
+    height: 20px;
+    border-radius: 50%;
+    border: 7px solid #fff;
+    background-color: #6f4e37;
+    transform: translate(0,-25%);
+    box-shadow: inset #4c3525 10px 10px 0;
+}
+/* Chocolate Cinnamon sticks */
+.cinnamon {
+    width: 15px;
+    height: 200px;
+    border-radius: 2px;
+    transform: translate(40%, -160%) rotate(35deg);
+    background-image: repeating-linear-gradient(
+        -80deg, #3c2a1d 0px, #3c2a1d 5px, #a97653 10px, #a97653 10px
+    );
+}
+.cinnamon::after {
+    width: 15px;
+    height: 200px;
+    border-radius: 2px;
+    transform: translate(20%, 10%) rotate(30deg);
+    background-image: repeating-linear-gradient(
+        -80deg, #3c2a1d 0px, #3c2a1d 5px, #a97653 10px, #a97653 10px
+    );
+}
+/* Dots */
+.cinnamon::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #6f4e37;
+    animation: blink 0.8s linear infinite alternate;
+    transform: translate(100%, 0);
+    box-shadow: #6f4e37 100px -200px, #6f4e37 100px -100px, #6f4e37 10px -400px 0 5px, #6f4e37 -100px -200px 0 2px, #6f4e37 -90px -380px, #6f4e37 -100px -80px, #6f4e37 180px -100px 0 1px;
+}
+.half-1, .half-2 {
+    z-index: -99;
+}
+
+/* Animations */
+
+/* Dots animation */
+@keyframes blink {
+    to {
+        box-shadow: #6f4e37 100px -200px 0 2px, #6f4e37 100px -100px 0 1px, #6f4e37 10px -400px 0 2px, #6f4e37 -100px -200px 0 5px, #6f4e37 -90px -380px 0 2px, #6f4e37 -100px -80px 0 3px, #6f4e37 180px -100px 0 4px;
+    }
+}
+/* Horizontal line animation */
+@keyframes line {
+    to { width: 90%; }
+}
+/* Coffee animation */ 
+@keyframes sdow1 {
+    to {
+        box-shadow: inset #e9cba7 -1px -3px, inset #4c3525 -20px 15px 0 0, inset #674833 -35px 30px 0 0;
+    }
+}
+@keyframes sdow2 {
+    to {
+        box-shadow: inset #e9cba7 2px -3px, inset #412e20 12px 10px 0 0, inset #674833 19px 15px 0 0;
+    }
+}
+/* Text effect */
+@keyframes align {
+  to { 
+      width: 100%;
+  }
+}
+/* Card align */
+@keyframes pop {
+    to {
+        left: 50%;
+    }
+}
